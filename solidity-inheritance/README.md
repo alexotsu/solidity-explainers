@@ -46,7 +46,7 @@ contract Inherits1 is InheritedA, InheritedB { // returns 'Returned from B'
 }
 ```
 
-Based on the fact that the `returnString()` function on **Inherits1** returns "Returned from B", we can deduce that the `super` refers to the function living in **InheritedB**. The reason for this is that Solidity inheritance is _linearized_ from right to left. Put differently, it will first search the right-most contract for a `returnString()` function, then the next to the left, stopping when it finds one.
+Based on the fact that the `returnString()` function on **Inherits1** returns "Returned from B", we can deduce that the `super` refers to the function living in **InheritedB**. The reason for this is that Solidity inheritance is [_linearized_](https://docs.soliditylang.org/en/develop/contracts.html#multiple-inheritance-and-linearization) from right to left. Put differently, it will first search the right-most contract for a `returnString()` function, then the next to the left, stopping when it finds one.
 
 You can confirm this behavior by switching the order in which inheritance is declared:
 

@@ -25,7 +25,7 @@ contract Inherits2 is InheritedB, InheritedA { // returns 'Returned from A'
     }
 }
 
-contract InheritsExplicit is InheritedA, InheritedB { // returns 'Returned from A'
+contract InheritsExplicit is InheritedA, InheritedB { // returns 'Returned from A' despite inheritance order
     function returnString() public override(InheritedA, InheritedB) pure returns(string memory str) {
         str = InheritedA.returnString(); // explicitly specifying the function from a parent contract works
     }
